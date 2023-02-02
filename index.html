@@ -13,6 +13,9 @@
             embedded
             loading-screen="enabled: false;"
             arjs="sourceType: webcam; debugUIEnabled: false;"
+                 
+                 <a-scene webxr="optionalFeatures:  hit-test;" ar-hit-test="target:#myobject;">
+	             <a-entity id="myobject"></a-entity>
         >
                 <a-image
                     src="assets/asset.png"
