@@ -1,4 +1,15 @@
- <body style="margin: 0; overflow: hidden;">
+ <!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+        <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
+        <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+        <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+    </head>
+
+    <body style="margin: 0; overflow: hidden;">
         <a-scene
             renderer="logarithmicDepthBuffer: true;"
             embedded
@@ -15,7 +26,7 @@
                     animation-mixer="loop: repeat"
                     gltf-model="#animated-asset"
                     scale="1.0 1.0 1.0"
-                    gps-entity-place="latitude: 49.8332302; longitude: 7.8759829;"
+                    gps-entity-place="latitude: 49.833222011911886; longitude: 7.8759291172355015;"
                 ></a-entity>
                 <a-entity
                     look-at="[gps-camera]"
