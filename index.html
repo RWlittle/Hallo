@@ -27,8 +27,12 @@
         <img id="sky" src="assets/sky.png">
         <img id="cubes-thumb" src="assets/pfeil1.jpg">
       </a-assets>
+    <!-- Image links. -->
+      <a-entity id="links" layout="type: line; margin: 1.5" position="0 -1 -4">
+        <a-entity template="src: #link" data-src="#cubes" data-thumb="#cubes-thumb"></a-entity>
+      </a-entity> 
       <a-box position="-1 0.5 -5" rotation="0 45 0" color="#4CC3D9"></a-box>
-      <a-sphere position="0 1.25 -5" radius="0.5" color="#EF2D5E"></a-sphere>
+      <a-sphere position="0 1.25 -5" radius="0.25" color="#EF2D5E"></a-sphere>
       <a-cone position="1 0.75 -6" radius="0.4" height="1.5" rotateion="0 0 45" color="#FFC65D"></a-cone>
       <a-sky src="#sky"></a-sky>
        <a-camera>
@@ -38,10 +42,6 @@
             animation__clickreset="property: scale; to: 0.1 0.1 0.1; dur: 1; startEvents: animationcomplete__click"
             animation__fusing="property: scale; from: 1 1 1; to: 0.1 0.1 0.1; easing: easeInCubic; dur: 150; startEvents: fusing">
          </a-cursor>
-         <a-entity class="link"
-           geometry="primitive: plane; height: 1; width: 1"
-           material="shader: flat; src: #cubes-thumb">
-         </a-entity>
       </a-camera>    
     </a-scene>
   </body>
