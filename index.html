@@ -12,7 +12,12 @@
       <a-cone position="1 0.75 -6" radius="0.4" height="1.5" rotateion="0 0 45" color="#FFC65D"></a-cone>
       <a-sky src="#sky"></a-sky>
        <a-camera>
-         <a-cursor color="#FFC65D"></a-cursor>
+         <a-cursor
+            id="cursor"
+            animation__click="property: scale; from: 0.1 0.1 0.1; to: 1 1 1; easing: easeInCubic; dur: 150; startEvents: click"
+            animation__clickreset="property: scale; to: 0.1 0.1 0.1; dur: 1; startEvents: animationcomplete__click"
+            animation__fusing="property: scale; from: 1 1 1; to: 0.1 0.1 0.1; easing: easeInCubic; dur: 150; startEvents: fusing">
+         </a-cursor>
       </a-camera>    
     </a-scene>
   </body>
