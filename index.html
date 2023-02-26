@@ -1,48 +1,69 @@
 <html>
   <head>
-    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
-    <meta charset="utf-8">
-    <title>VGK Walk</title>
-    <meta name="description" content="VGK Walk - Test">
-    <script src="https://unpkg.com/aframe-event-set-component@5/dist/aframe-event-set-component.min.js"></script>
-    <script src="https://unpkg.com/aframe-layout-component@5.3.0/dist/aframe-layout-component.min.js"></script>
-    <script src="https://unpkg.com/aframe-template-component@3.2.1/dist/aframe-template-component.min.js"></script>
-    <script src="https://unpkg.com/aframe-proxy-event-component@2.1.0/dist/aframe-proxy-event-component.min.js"></script>
-    
-    <!-- Image link template to be reused. -->
-    <script id="link" type="text/html">
-      <a-entity class="link"
-        geometry="primitive: plane; height: 1; width: 1"
-        material="shader: flat; src: ${thumb}"
-        event-set__mouseenter="scale: 2 2 2"
-        event-set__mouseleave="scale: 1 1 1"
-        event-set__click="_target: #image-360; _delay: 300; material.src: ${src}"
-        proxy-event="event: click; to: #image-360; as: fade"
-        sound="on: click; src: #click-sound"></a-entity>
-    </script>
-  </head>
+  <title>A-Frame Switch Scenes</title>
+  <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+  <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+ <!-- <script src="js/aframe.js"></script>-->
+</head>
+  
   <body>
-    <a-scene>
-      <a-assets>
+  <a-scene>
+    <!--The Assets-->
+    <a-assets>
         <img id="sky" src="assets/sky.png">
-        <img id="cubes-thumb" src="assets/pfeil1.png">
-      </a-assets>
-    <!-- Image links. -->
-      <a-entity id="links" layout="type: line; margin: 1.5" position="0 -1 -4">
-        <a-entity template="src: #link" data-thumb="#cubes-thumb"></a-entity>
-      </a-entity> 
-      <a-box position="-1 0.5 -5" rotation="0 45 0" color="#4CC3D9"></a-box>
-      <a-sphere position="0 1.25 -5" radius="0.5" color="#EF2D5E"></a-sphere>
-      <a-cone position="1 0.75 -6" radius="0.4" height="1.5" rotateion="0 0 45" color="#FFC65D"></a-cone>
-      <a-sky src="#sky"></a-sky>
-       <a-camera>
-         <a-cursor
-            id="cursor"
-            animation__click="property: scale; from: 0.1 0.1 0.1; to: 1 1 1; easing: easeInCubic; dur: 150; startEvents: click"
-            animation__clickreset="property: scale; to: 0.1 0.1 0.1; dur: 1; startEvents: animationcomplete__click"
-            animation__fusing="property: scale; from: 1 1 1; to: 0.1 0.1 0.1; easing: easeInCubic; dur: 150; startEvents: fusing">
-         </a-cursor>
-      </a-camera>    
-    </a-scene>
-  </body>
-</html>
+        <img id="farm" src="assets/flur.png">
+    </a-assets>
+    
+      
+    <!--The placement of model-->   
+    <a-entity camera position="2 1 10" look-controls wasd-controls>
+      <a-entity cursor="fuse: true; fuseTimeout: 1000"
+                position="0 0 -1"
+                geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
+                material="color: black; shader: flat">       <a-animation begin="click" easing="ease-in" attribute="scale"
+                     fill="backwards" from="0.1 0.1 0.1" to="1 1 1"></a-animation>
+            <a-animation begin="cursor-fusing" easing="ease-in" attribute="scale"
+                     fill="forwards" from="1 1 1" to="0.1 0.1 0.1"></a-animation>
+      </a-entity>
+    </a-entity>
+    
+    <a-enity id="scene1">
+      <a-sky scr="#sky"></a-sky>
+      <a-box color="red" position="-6 0 0" onclick="setSceneFarm()"></a-box>
+      <a-animation attributes="intensity" begin="aaa" from="0" to="1" delay="100" dur="100" fill="both"></a-animation>
+    <$  <!--The placement of model-->   
+    <a-entity camera position="2 1 10" look-controls wasd-controls>
+      <a-entity cursor="fuse: true; fuseTimeout: 1000"
+                position="0 0 -1"
+                geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
+                material="color: black; shader: flat">
+        <a-animation begin="click" easing="ease-in" attribute="scale"
+                     fill="backwards" from="0.1 0.1 0.1" to="1 1 1"></a-animation>
+        <a-animation begin="cursor-fusing" easing="ease-in" attribute="scale"
+                     fill="forwards" from="1 1 1" to="0.1 0.1 0.1"></a-animation>
+      </a-entity>
+    </a-entity>
+   
+   <a-enity id="scene1">
+     <a-sky scr="#sky"></a-sky>
+     <a-box color="red" position="-6 0 0" onclick="setSceneForm()"></a-box>
+     <a-animation attribute="intensity" begin="aaa" from="0" to="1" delay="100" dur="100" fill="both"></a-animation>
+   </a-enity>
+   <a-enity id="sceneForm" visible="false">
+      <a-sky scr="#form"></a-sky>
+      <a-box color="white" position="0 0 0" onclick="setScene1()"></a-box>
+   </a-enity>
+   
+   <Script type="text/javascript">
+     funktion setScene1(){
+       document.getElementById('scene1').setAttribute('visible', 'true')
+       document.getElementById('sceneForm').setAttribute('visible', 'false')
+     }
+      funktion setSceneForm(){
+       document.getElementById('scene1').setAttribute('visible', 'false')
+       document.getElementById('sceneForm').setAttribute('visible', 'true')
+     }
+     </script>
+      </body>
+    </html>
+  
