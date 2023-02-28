@@ -16,43 +16,12 @@
     
       
     <!--The placement of model-->   
-    <a-entity camera position="0 0 0" look-controls wasd-controls>
+    <a-scene>
       <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
       <a-sphere position="0 1.5 -5" radius="1.5" color="#EF2D5E"></a-sphere>
       <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
       <a-plane position="0 -2 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
       <a-sky scr="assets/sky.png"></a-sky>
-      
-     </a-entity>
-    </a-entity>
-    
-    <a-enity id="scene1">
-      <a-sky scr="#sky"></a-sky>
-      <a-box color="red" position="-6 0 0" onclick="setSceneFarm()"></a-box>
-      <a-animation attributes="intensity" begin="aaa" from="0" to="1" delay="100" dur="100" fill="both"></a-animation>
-    <$  <!--The placement of model-->   
-    <a-entity camera position="2 1 10" look-controls wasd-controls>
-      <a-entity cursor="fuse: true; fuseTimeout: 1000"
-                position="0 0 -1"
-                geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
-                material="color: black; shader: flat">
-        <a-animation begin="click" easing="ease-in" attribute="scale"
-                     fill="backwards" from="0.1 0.1 0.1" to="1 1 1"></a-animation>
-        <a-animation begin="cursor-fusing" easing="ease-in" attribute="scale"
-                     fill="forwards" from="1 1 1" to="0.1 0.1 0.1"></a-animation>
-        <a-box color"blue" position="0 3 0" </a-box>
-      </a-entity>
-    </a-entity>
-   
-   <a-enity id="scene1">
-     <a-sky scr="#sky"></a-sky>
-     <a-box color="red" position="-6 0 0" onclick="setSceneForm()"></a-box>
-     <a-animation attribute="intensity" begin="aaa" from="0" to="1" delay="100" dur="100" fill="both"></a-animation>
-   </a-enity>
-   <a-enity id="sceneForm" visible="false">
-      <a-sky scr="#form"></a-sky>
-      <a-box color="white" position="0 0 0" onclick="setScene1()"></a-box>
-   </a-enity>
    </a-scene>
    
    <Script type="text/javascript">
