@@ -1,6 +1,6 @@
 <html>
   <head>
-  <title>VGK-Walk</title>
+  <title>VGK-Rundgang</title>
   <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
   <script src="https://rawgit.com/mayognaise/aframe-mouse-cursor-component/master/dist/aframe-mouse-cursor-component.min.js"></script> 
   <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
@@ -27,7 +27,7 @@
     </a-cursor>
   </a-entity> 
 
-    <a-entity id="Scene1" visible="true">
+    <a-entity id="Scene1">
       <a-box position="-2 0 -7" rotation="0 45 0" color="#4CC3D9"></a-box>
       <a-sphere position="0 1 -7" radius="1.25" color="#EF2D5E" onclick="setSceneSky()"></a-sphere>
       <a-cylinder position="3 0.5 -6" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
@@ -45,8 +45,8 @@
    
    <Script type="text/javascript">
      function setScene1() {
-     document.getElementById('Scene1').setAttribute('visible', 'false')
-     document.getElementById('SceneSky').setAttribute('visible', 'true')
+     document.getElementById('Scene1').setAttribute('visible', 'true')
+     document.getElementById('SceneSky').setAttribute('visible', 'false')
     
      funktion setSceneSky(){
        document.getElementById('scene1').setAttribute('visible', 'false')
