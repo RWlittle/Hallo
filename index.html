@@ -1,7 +1,8 @@
 <html>
   <head>
-  <title>VGK-Rundgang</title>
+  <title>VGK-Walk</title>
   <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+  <script src="https://rawgit.com/mayognaise/aframe-mouse-cursor-component/master/dist/aframe-mouse-cursor-component.min.js"></script> 
   <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
   <script src="js/aframe.js"></script>
 </head>
@@ -17,14 +18,14 @@
       
     <!--The placement of model-->  
  
- <a-camera>
+ <a-entity camera look-controls mouse-cursor>
     <a-cursor id="cursor">
       <a-animation begin="click" easing="ease-in" attribute="scale"
                    fill="backwards" from="0.1 0.1 0.1" to="2 2 2" dur="150"></a-animation>
       <a-animation begin="cursor-fusing" easing="ease-in" attribute="scale"
                    from="1 1 1" to="0.1 0.1 0.1" dur="1500"></a-animation>
     </a-cursor>
-  </a-camera> 
+  </a-entity> 
 
     <a-entity id="Scene1" visible="true">
       <a-box position="-2 0 -7" rotation="0 45 0" color="#4CC3D9"></a-box>
