@@ -1,6 +1,6 @@
 <html>
   <head>
-  <title>VGK-Rundgang</title>
+  <title>VGK-Walk</title>
   <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
   <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
   <script src="js/aframe.js"></script>
@@ -34,12 +34,17 @@
       <a-sky color="yellow"></a-sky> 
      </a-entity>  
     
+    <a-entity id="SceneSky">
+      <a-sphere position="0 1 -5" radius="1.00" color="#4CC3D9"></a-sphere>
+      <a-sky scr="#sky"></a-sky>
+    </a-entity>
+    
  </a-scene>
    
    <Script type="text/javascript">
-     funktion setScene1(){
-       document.getElementById('scene1').setAttribute('visible', 'true')
-       document.getElementById('sceneForm').setAttribute('visible', 'false')
+     funktion setSceneSky(){
+       document.getElementById('SceneSky').setAttribute('visible', 'true')
+       document.getElementById('scene1').setAttribute('visible', 'false')
      }
       funktion setSceneForm(){
        document.getElementById('scene1').setAttribute('visible', 'false')
