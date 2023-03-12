@@ -1,43 +1,23 @@
 <html>
   <head>
-  <title>VGK-Rundgang</title>
-  <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
-  <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
-  <script src="js/aframe.js"></script>
-</head>
+      <title>VGK-Walk</title>
+      <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+  </head>
   
   <body>
-  <a-scene>
-    <!--The Assets-->
-    <a-assets>
-        <img id="texture" src="assets/sky.png">
-    </a-assets>
+    <a-scene>
+        <!--The Assets-->
+        <a-assets>
+            <img id="texture" src="assets/sky.png">
+        </a-assets>
     
-    <a-box with="1" hight="1" depth="1"
-           position="0 0 0"
-           rotation="45 45 45"
-           scale="1 2.5 1"
-           color="blue">
-      <a-animation attribute="rotation" begin="click" repeat="indefinite" to="0 360 0"></a-animation>
-      
-    </a-box>
-    
-    <a-camera position="0 0 0">
-      <a-cursor color="red" />
-    </a-camera>
-   </a-scene>
-    
-   <script>
-     var box = document.querySelector( 'a-box' );
-     box.addEventListener("mouseenter", function( )
-     {
-       box.setAttribute( "scale",
-        {
-         x:0.5,
-         y:2,
-         z:5.9
-       } );
-     } );  
-    </script>
+        <a-box with="1" hight="1" depth="1"
+              position="0 0 0"
+              rotation="45 45 45"
+              scale="1 2.5 1"
+              color="#texture">
+           <a-animation attribute="rotation" begin="click" repeat="indefinite" to="0 360 0"></a-animation>
+        </a-box>
+    </a-scene>
   </body>
 </html>
