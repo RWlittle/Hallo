@@ -1,6 +1,6 @@
 <html>
   <head>
-      <title>VGK-Walk</title>
+      <title>VGK-Rundgang</title>
       <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
   </head>
   
@@ -11,7 +11,7 @@
             <img id="texture" src="assets/sky.png">
         </a-assets>
      
-      <a-entity camera position="0 0 5" look-controls wasd-controls>
+      <a-entity camera position="1 1 5" look-controls wasd-controls>
        <a-entity cursor="fuse: true; fuseTimeout: 1000"
                  position="0 0 -1"
                  geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
@@ -24,7 +24,7 @@
      </a-entity>
  
         <a-box width="1" hight="1" depth="1"
-               position="0 0 0"
+               position="0 2 0"
                rotation="45 45 45"
                scale="1 2.5 1"
                src="#texture">
