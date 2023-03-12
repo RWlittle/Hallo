@@ -1,6 +1,6 @@
 <html>
   <head>
-      <title>VGK-Walk</title>
+      <title>VGK-Rundgang</title>
       <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
   </head>
   
@@ -13,6 +13,11 @@
             <img id="pfeil" scr="assets/pfeil1.png>
         </a-assets>
      
+       <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"
+           event-set__enter="_event: mouseenter; color: #8FF7FF"
+           event-set__leave="_event: mouseleave; color: #4CC3D9"></a-box>                        
+                                 
+                                 
       <a-entity camera position="1 1 5" look-controls wasd-controls>
        <a-entity cursor="fuse: true; fuseTimeout: 1000"
                  position="0 0 -1"
@@ -24,27 +29,6 @@
                       fill="forwards" from="1 1 1" to="0.1 0.1 0.1"></a-animation>
        </a-entity>
      </a-entity>
-    
-        <a-plane width="1" hight="1"
-               position="0 2 0"
-               rotation="45 45 45"
-               scale="1 2.5 1"
-               src="#texture">
-            <a-animation attribute="rotation" begin="click" repeat="indefinite" to="0 360 0"></a-animation>
-        </a-plane>
-    </a-scene>
-    
-    <script>
-        var box=document.querySelector('a-box');
-        box.addEventListener("mouseenter", fuction( )
-        {
-             box.setAttribute("scale",
-             {
-                  x:0.5,
-                  y:2,
-                  z:5.9
-             } );
-      } );
-    </script>    
+ 
   </body>
 </html>
