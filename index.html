@@ -1,6 +1,6 @@
 <html>
   <head>
-      <title>VGK-Walk</title>
+      <title>VGK-Rundgang</title>
       <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
   </head>
   
@@ -8,8 +8,9 @@
     <a-scene>
         <!--The Assets-->
         <a-assets>
-            <img id="texture" src="assets/sky.png">
-            <imf id="flur" src="assets/flur.png">
+            <img id="sky" src="assets/sky.png">
+            <img id="flur" src="assets/Flur.png">
+            <img id="pfeil" scr="assets/pfeil1.png>
         </a-assets>
      
       <a-entity camera position="1 1 5" look-controls wasd-controls>
@@ -23,15 +24,14 @@
                       fill="forwards" from="1 1 1" to="0.1 0.1 0.1"></a-animation>
        </a-entity>
      </a-entity>
- 
-        <a-plane width="1" hight="1"
-               position="0 2 0"
-               rotation="45 45 45"
-               scale="1 2.5 1"
-               src="#texture">
-            <a-animation attribute="rotation" begin="click" repeat="indefinite" to="0 360 0"></a-animation>
-        </a-plane>
   
+      <a-entity class="link"
+          geometry="primitive: plane;height:1; width:1"
+          material="scr="#pfeil"></a-entity>
+                            
+          
+     <a-sky id="skybox" src="#sky"></a-sky
+        
     </a-scene>
     
     <script>
