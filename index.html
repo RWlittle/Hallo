@@ -1,6 +1,6 @@
 <html>
   <head>
-      <title>VGK-Walk></title>
+      <title>VGK-Rundgang></title>
       <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
   </head>
   
@@ -8,6 +8,7 @@
     <a-scene>
   <a-assets>
     <img id="sky" src="assets/sky.png">
+    <img id="flur" src="assets/flur.png>
     <img id="pfeil" src="assets/redpfeil1.png">
   </a-assets>
       
@@ -29,7 +30,25 @@
   <a-plane src="#pfeil" transparent="true" position="2 -1 0" height="1" width="0.5" rotation="-90 0 0"></a-plane
   <a-box color="red"></a-box>
 </a-entity>
-      
-</a-scene> 
+   
+<a-entity id="sceneFlur" visible="false">
+  <a-sky src="#flur"></a-sky>
+  <a-plane src="#pfeil" transparent="true" position="2 -1 0" height="1" width="0.5" rotation="-90 0 0"></a-plane
+</a-entity>
+                    
+   
+</a-scene>
+<script type="text/javascript"> 
+   function setScene1() {
+     document.getElementById('scene1').setAttribute('visible', 'true')
+     document.getElementById('sceneFlur').setAttribute('visible', 'false')
+    
+   }
+    function setSceneFarm() {
+     document.getElementById('scene1').setAttribute('visible', 'false')
+     document.getElementById('sceneFlur').setAttribute('visible', 'true')
+   }                                                                                                
+</script>                                                                                                   
+                                                                                                      
   </body>
 </html>
