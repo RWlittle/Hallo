@@ -1,6 +1,6 @@
 <html>
   <head>
-      <title>VGK-Walk</title>
+      <title>VGK-Rundgang</title>
       <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
   </head>
   
@@ -26,7 +26,13 @@
      </a-entity>
                             
           
-     <a-sky id="skybox" src="#sky"></a-sky
+        <a-plane width="1" hight="1"
+               position="0 2 0"
+               rotation="45 45 45"
+               scale="1 2.5 1"
+               src="#texture">
+            <a-animation attribute="rotation" begin="click" repeat="indefinite" to="0 360 0"></a-animation>
+        </a-plane>
      <a-box color="red"></a-box>
         
     </a-scene>
