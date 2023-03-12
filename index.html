@@ -1,6 +1,6 @@
 <html>
   <head>
-      <title>VGK-Rundgang</title>
+      <title>VGK-Walk</title>
       <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
   </head>
   
@@ -16,8 +16,10 @@
                rotation="45 45 45"
                scale="1 2.5 1"
                src="#texture">
-            <a-animation attribute="rotation" repeat="indefinite" to="0 360 0"></a-animation>
+            <a-animation attribute="rotation" begin="click" repeat="indefinite" to="0 360 0"></a-animation>
         </a-box>
+      <a-camera position="0 7 5">
+        <a-curser color"#ff0000" />
     </a-scene>
   </body>
 </html>
