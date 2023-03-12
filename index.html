@@ -1,13 +1,13 @@
 <html>
   <head>
-      <title>VGK-Rundgang></title>
+      <title>VGK-Walk></title>
       <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
   </head>
   
   <body>
     <a-scene>
   <a-assets>
-    <img id="sky" src="assets/Flur.png">
+    <img id="sky" src="assets/Flur1.jpg">
     <img id="flur" src="assets/sky.png>
     <img id="pfeil" src="assets/redpfeil1.png">
   </a-assets>
@@ -25,13 +25,13 @@
      </a-entity>
 
 
-<a-entity id="scene1" visible="true">
+<a-entity id="scene1" visible="false">
   <a-sky src="#flur"></a-sky>
   <a-plane src="#pfeil" transparent="true" position="2 -1 0" height="1" width="0.5" rotation="-90 0 0"></a-plane
   <a-box color="red"></a-box>
 </a-entity>
    
-<a-entity id="scene1" visible="false">
+<a-entity id="scene1" visible="true">
   <a-sky src="#sky"></a-sky>
   <a-plane src="#pfeil" transparent="true" position="-6 -1 0" height="1" width="0.5" rotation="-90 0 0"></a-plane
   <a-box color="red"></a-box>
