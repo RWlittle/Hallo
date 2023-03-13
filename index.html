@@ -1,14 +1,18 @@
 <html>
   <head>
-      <title>VGK-Rundgang></title>
+      <title>VGK-Walk></title>
       <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
   </head>
   
   <body>
     <a-scene>
   <a-assets>
-    <img id="sky" src="assets/Flur1.jpg">
-    <img id="flur" src="assets/sky.png">
+    <img id="eingang" src="assets/Eingang.jpg">
+    <img id="flur1" src="assets/Flur1.jpg">
+    <img id="flur2" src="assets/Flur2.jpg">
+    <img id="flurwerk" src="assets/Flurwerk.jpg>
+    <img id="flurwerk1" src="assets/FlurWerk1.jpg">
+    <img id="tw" src="assets/Michael.jpg>
     <img id="pfeil" src="assets/pfeil1.png">
   </a-assets>
       
@@ -26,27 +30,63 @@
 
 
 <a-entity id="scene1" visible="false">
-  <a-sky src="#flur"></a-sky>
+  <a-sky src="#eingang"></a-sky>
   <a-plane src="#pfeil" transparent="true" position="2 -1 0" height="1" width="0.5" rotation="-90 0 0" onclick="setScene2()"></a-plane>
 </a-entity>
    
 <a-entity id="scene2" visible="true">
-  <a-sky src="#sky"></a-sky>
-  <a-plane src="#pfeil" transparent="true" position="-6 -1 0" height="1" width="0.5" rotation="-90 0 0" onclick="setScene1()"></a-plane>
+  <a-sky src="#flur1"></a-sky>
+  <a-plane src="#pfeil" transparent="true" position="-6 -1 0" height="1" width="0.5" rotation="-90 0 0" onclick="setScene3()"></a-plane>
 </a-entity>
-                    
-   
+      
+<a-entity id="scene3" visible="true">
+  <a-sky src="#flur2"></a-sky>
+  <a-plane src="#pfeil" transparent="true" position="-6 -1 0" height="1" width="0.5" rotation="-90 0 0" onclick="setScene4()"></a-plane>
+</a-entity> 
+      
+<a-entity id="scene4" visible="true">
+  <a-sky src="#flurwerk"></a-sky>
+  <a-plane src="#pfeil" transparent="true" position="-6 -1 0" height="1" width="0.5" rotation="-90 0 0" onclick="setScene5()"></a-plane>
+</a-entity>
+      
+<a-entity id="scene5" visible="true">
+  <a-sky src="#flurwerk1"></a-sky>
+  <a-plane src="#pfeil" transparent="true" position="-6 -1 0" height="1" width="0.5" rotation="-90 0 0" onclick="setScene6()"></a-plane>
+</a-entity> 
+      
+<a-entity id="scene6" visible="true">
+  <a-sky src="#tw"></a-sky>
+  <a-plane src="#pfeil" transparent="true" position="-6 -1 0" height="1" width="0.5" rotation="-90 0 0" onclick="setScene1()"></a-plane>
+</a-entity>           
+      
 </a-scene>
 <script type="text/javascript"> 
    function setScene1() {
      document.getElementById("scene1").setAttribute("visible", "true")
      document.getElementById("scene2").setAttribute("visible", "false")
-    
    }
+  
     function setScene2() {
      document.getElementById('scene1').setAttribute('visible', 'false')
      document.getElementById('scene2').setAttribute('visible', 'true')
-   }                                                                                                
+   } 
+      function setScene3() {
+     document.getElementById('scene2').setAttribute('visible', 'false')
+     document.getElementById('scene3').setAttribute('visible', 'true')
+   } 
+  
+     function setScene4() {
+     document.getElementById('scene3').setAttribute('visible', 'false')
+     document.getElementById('scene4').setAttribute('visible', 'true')
+   } 
+      function setScene5() {
+     document.getElementById('scene4').setAttribute('visible', 'false')
+     document.getElementById('scene5').setAttribute('visible', 'true')
+   } 
+      function setScene6() {
+     document.getElementById('scene5').setAttribute('visible', 'false')
+     document.getElementById('scene6').setAttribute('visible', 'true')
+   } 
 </script>                                                                                                   
                                                                                                       
   </body>
