@@ -1,12 +1,13 @@
 <html>
   <head>
-      <title>VGK-Walk</title>
+      <title>VGK-Rundgang</title>
       <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
   </head>
   
   <body>
     <a-scene>
   <a-assets>
+    <img id="tür" src="assets/EingangTürQuadrat.jpg">
     <img id="eingang" src="assets/Eingang.jpg">
     <img id="flur1" src="assets/Flur1.jpg">
     <img id="flur2" src="assets/Flur2.jpg">
@@ -29,8 +30,12 @@
        </a-entity>
      </a-entity>
 
-
-<a-entity id="scene1" visible="true">
+<a-entity id="scene0" visible="true">
+  <a-plane src="#tür" height="1" width="1"></a-plane>
+  <a-plane src="#pfeil" transparent="true" position="2 -1 -4" height="1" width="0.5" rotation="-90 0 0" onclick="setScene1()"></a-plane>
+</a-entity>
+      
+<a-entity id="scene1" visible="false">
   <a-sky src="#eingang"></a-sky>
   <a-plane src="#pfeil" transparent="true" position="2 -1 -4" height="1" width="0.5" rotation="-90 0 0" onclick="setScene2()"></a-plane>
 </a-entity>
@@ -66,6 +71,11 @@
       
 </a-scene>
 <script type="text/javascript"> 
+     function setScene0() {
+     document.getElementById("scene0").setAttribute("visible", "true")
+     document.getElementById("scene1").setAttribute("visible", "false")
+   }
+  
    function setScene1() {
      document.getElementById("scene1").setAttribute("visible", "true")
      document.getElementById("scene2").setAttribute("visible", "false")
