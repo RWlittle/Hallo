@@ -1,6 +1,6 @@
 <html>
   <head>
-      <title>VGK-Rundgang</title>
+      <title>VGK-Walk</title>
       <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
   </head>
   
@@ -33,9 +33,7 @@
 <a-entity id="scene0" visible="true">
       <a-box position="0 1.25 -5 -3" rotation="0 0 0" color="#4CC3D9" onclick="setScene1()" text="START"></a-box>
       <a-plane position="0 1.25 -5" rotation="0 0 0" width="4" height="4" src="#tür"></a-plane>
-      <a-image id="button" data-clickable visible="true" position="2 1.75 -0.2" height="0.5" width="0.5" rotation="0 90 0" onclick="dosomething()" event-set__enter="_event: mouseenter;  width: 0.53; height: 0.53;"
-            event-set__leave="_event: mouseleave;  width: 0.5; height: 0.5;"></a-image>
-
+      <a-image id="button" data-clickable visible="true" position="2 1.75 -0.2" height="0.5" width="0.5" rotation="0 90 0" onclick="dosomething()"></a-image>
       <a-sky color="#ECECEC"></a-sky>
 </a-entity>
       
@@ -102,21 +100,37 @@
        document.getElementById("scene5").setAttribute("visible", "false")
    } 
       function setScene3() {
-     document.getElementById('scene2').setAttribute('visible', 'false')
-     document.getElementById('scene3').setAttribute('visible', 'true')
+       document.getElementById("scene0").setAttribute("visible", "false")
+       document.getElementById("scene1").setAttribute("visible", "false")
+       document.getElementById("scene2").setAttribute("visible", "true")
+       document.getElementById("scene3").setAttribute("visible", "false")
+       document.getElementById("scene4").setAttribute("visible", "false")
+       document.getElementById("scene5").setAttribute("visible", "false")
    } 
   
      function setScene4() {
-     document.getElementById('scene3').setAttribute('visible', 'false')
-     document.getElementById('scene4').setAttribute('visible', 'true')
+       document.getElementById("scene0").setAttribute("visible", "false")
+       document.getElementById("scene1").setAttribute("visible", "false")
+       document.getElementById("scene2").setAttribute("visible", "false")
+       document.getElementById("scene3").setAttribute("visible", "true")
+       document.getElementById("scene4").setAttribute("visible", "false")
+       document.getElementById("scene5").setAttribute("visible", "false")
    } 
       function setScene5() {
-     document.getElementById('scene4').setAttribute('visible', 'false')
-     document.getElementById('scene5').setAttribute('visible', 'true')
+       document.getElementById("scene0").setAttribute("visible", "false")
+       document.getElementById("scene1").setAttribute("visible", "false")
+       document.getElementById("scene2").setAttribute("visible", "false")
+       document.getElementById("scene3").setAttribute("visible", "false")
+       document.getElementById("scene4").setAttribute("visible", "true")
+       document.getElementById("scene5").setAttribute("visible", "false")
    } 
       function setScene6() {
-     document.getElementById('scene5').setAttribute('visible', 'false')
-     document.getElementById('scene6').setAttribute('visible', 'true')
+       document.getElementById("scene0").setAttribute("visible", "false")
+       document.getElementById("scene1").setAttribute("visible", "false")
+       document.getElementById("scene2").setAttribute("visible", "false")
+       document.getElementById("scene3").setAttribute("visible", "false")
+       document.getElementById("scene4").setAttribute("visible", "false")
+       document.getElementById("scene5").setAttribute("visible", "true")
    } 
 </script>                                                                                                   
                                                                                                       
