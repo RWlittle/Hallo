@@ -1,6 +1,6 @@
 <html>
   <head>
-      <title>VGK-Rundgang</title>
+      <title>VGK-Walk</title>
       <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
       <script src="https://unpkg.com/aframe-event-set-component@5/dist/aframe-event-set-component.min.js"></script>
     
@@ -8,7 +8,7 @@
   <body>
     <a-scene>
   <a-assets>
-    <img id="tür" src="assets/Anfang.jpg">
+    <img id="tür" src="assets/EingangTürQuadrat.jpg">
     <img id="eingang" src="assets/Eingang.jpg">
     <img id="flur1" src="assets/Flur1.jpg">
     <img id="flur2" src="assets/Flur2.jpg">
@@ -24,7 +24,7 @@
                  position="0 0 -1"
                  geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.05"
                  material="color: white; shader: flat">
-         <a-animation begin="click" easing="ease-in" attribute="scale"
+         <a-animation begin="click" easing="ease-in" attribute="scale" color:"red"
                       fill="backwards" from="1 1 1" to="1.5 1.5 1.5"></a-animation>
          <a-animation begin="cursor-fusing" easing="ease-in" attribute="scale"
                       fill="forwards" from="1.5 1.5 1.5" to="1 1 1"></a-animation>  
@@ -33,7 +33,10 @@
 
 <a-entity id="scene0" visible="true">
      <a-text size="3" color="black" position="-1 2 -4" value="Virtueller Spaziergang durch die VGK"></a-text>
-      <a-image src="#tür" height="10" width="10" position="-1 1 -4"></a-image>
+      <a-image src="#tür" height="5" width="5" position="-1 1 -4"
+           onclick="setScene1()"
+           event-set__click="material.color: white; scale: 1.1 1.1 1.1"
+           event-set__mouseenter="material.color: white; scale: 1.1 1.1 1.1"></a-image>
       <a-text size="7" position="-2 1 -4" value="START" color="white"></a-text>
       <a-sky src="#tür"></a-sky>
 </a-entity>
