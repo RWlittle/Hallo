@@ -33,11 +33,11 @@
 
 <a-entity id="scene0" visible="true">
      <a-text size="3" color="black" position="-1 2 -4" value="Virtueller Spaziergang durch die VGK"></a-text>
-      <a-plane color="green" position="-1 -1 -4"
+      <a-plane src="#tür" position="-1 -1 -4"
            onclick="setScene1()"
            event-set__click="material.color: red; scale: 1.1 1.1 1.1"
            event-set__mouseenter="material.color: blue; scale: 1.1 1.1 1.1"></a-box>
-      <a-text size="4" position="-1 -1 -4" value="START" color="black"></a-text>
+      <a-text size="4" position="1 -1 -4" value="START" color="white"></a-text>
       <a-sky src="#tür"></a-sky>
 </a-entity>
       
