@@ -1,6 +1,6 @@
 <html>
   <head>
-      <title>VGK-Walk</title>
+      <title>VGK-Rundgang</title>
       <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
   </head> 
   <body>
@@ -30,6 +30,9 @@
      </a-entity>
 
 <a-entity id="scene0" visible="true">
+       <a-box color="green"
+           event-set__click="material.color: red; scale: 2 2 2"
+           event-set__mouseenter="material.color: blue"></a-box>
        <a-text size="3" value="Virtueller Spaziergang durch die VGK"</a-text>
       <a-box position="0 1.25 -5 -3" size="1 1 1" rotation="0 0 0" color="#4CC3D9" onclick="setScene1()" text="START"></a-box>
       <a-plane position="0 1.25 -5" rotation="0 0 0" width="55" height="50" src="#tür"></a-plane>
