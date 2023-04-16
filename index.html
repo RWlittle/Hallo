@@ -1,6 +1,6 @@
 <html>
   <head>
-      <title>VGK-Walk</title>
+      <title>VGK-Rundgang</title>
       <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
       <script src="https://unpkg.com/aframe-event-set-component@5/dist/aframe-event-set-component.min.js"></script>
     
@@ -32,7 +32,7 @@
      </a-entity>
 
 <a-entity id="scene0" visible="true">
-     <a-text size="3" color="black" position="-1 2 -4" value="Virtueller Spaziergang durch die VGK"></a-text>
+     <a-text size="3" color="black" position="1 2 -4" value="Virtueller Spaziergang durch die VGK"></a-text>
       <a-image src="#tür" height="5" width="5" position="-2 1 -4"
            onclick="setEingang()"
            event-set__click="material.color: white; scale: 1.1 1.1 1.1"
@@ -46,33 +46,33 @@
   <a-plane src="#pfeil" transparent="true" position="2 -1 -4" height="1" width="0.5" rotation="-90 0 0" onclick="setScene2()"></a-plane>
 </a-entity>
    
-<a-entity id="scene2" visible="false">
+<a-entity id="Flur1" visible="false">
   <a-sky src="#flur1" rotation="0 -90 0"></a-sky>
-  <a-plane src="#pfeil" transparent="true" position="1 0 -2" height="0.3" width="0.3" rotation="0 0 0" onclick="setScene3()"></a-plane>
+  <a-plane src="#pfeil" transparent="true" position="1 0 -2" height="0.3" width="0.3" rotation="0 0 0" onclick="setFlur2()"></a-plane>
   <a-plane src="#pfeil" transparent="true" position="1.5 -1 3" height="1" width="0.3" rotation="-90 0 180" onclick="Eingang()"></a-plane>
-  <a-plane src="#pfeil" transparent="true" position="0.5 0 -1" height="0.3" width="0.3" rotation="-90 0 90" onclick="setScene6()"></a-plane>
+  <a-plane src="#pfeil" transparent="true" position="0.5 0 -1" height="0.3" width="0.3" rotation="-90 0 90" onclick="setTarifwesen()"></a-plane>
 </a-entity>
       
-<a-entity id="scene3" visible="false">
-  <a-sky src="#flur2" rotation="0 90 0"></a-sky>
-  <a-plane src="#pfeilrot" transparent="true" position="1 0 -2" height="0.3" width="0.3" rotation="0 0 0" onclick="setScene4()"></a-plane>
-  <a-plane src="#pfeil" transparent="true" position="-1 0 -2" height="0.3" width="0.3" rotation="45 0 0" onclick="setScene5()"></a-plane>
-  <a-plane src="#pfeil" transparent="true" position="0 -1 3" height="1" width="0.3" rotation="0 0 180" onclick="setScene2()"></a-plane>
+<a-entity id="Flur2" visible="false">
+  <a-sky src="#Flur2" rotation="0 90 0"></a-sky>
+  <a-plane src="#pfeilrot" transparent="true" position="1 0 -2" height="0.3" width="0.3" rotation="0 0 0" onclick="setWerkTreppe()"></a-plane>
+  <a-plane src="#pfeil" transparent="true" position="-1 0 -2" height="0.3" width="0.3" rotation="45 0 0" onclick="setWerkstattFlur()"></a-plane>
+  <a-plane src="#pfeil" transparent="true" position="0 -1 3" height="1" width="0.3" rotation="0 0 180" onclick="setFlur1()"></a-plane>
 </a-entity> 
       
-<a-entity id="scene4" visible="false">
+<a-entity id="WerkstattFlur" visible="false">
   <a-sky src="#flurwerk" rotation="0 90 0"></a-sky>
-  <a-plane src="#pfeil" transparent="true" position="-6 -1 0" height="1" width="0.5" rotation="-90 0 0" onclick="setScene5()"></a-plane>
+  <a-plane src="#pfeil" transparent="true" position="-6 -1 0" height="1" width="0.5" rotation="-90 0 0" onclick="setWerkTreppe()"></a-plane>
 </a-entity>
       
-<a-entity id="scene5" visible="false">
+<a-entity id="WerkTreppe" visible="false">
   <a-sky src="#flurwerk1"></a-sky>
-  <a-plane src="#pfeil" transparent="true" position="-6 -1 0" height="1" width="0.5" rotation="-90 0 0" onclick="setScene6()"></a-plane>
+  <a-plane src="#pfeil" transparent="true" position="-6 -1 0" height="1" width="0.5" rotation="-90 0 0" onclick="setWerkstattFlur()"></a-plane>
 </a-entity> 
       
-<a-entity id="scene6" visible="false">
+<a-entity id="Tarifwesen" visible="false">
   <a-sky src="#tw"></a-sky>
-  <a-plane src="#pfeil" transparent="true" position="1 0 0" height="0.5" width="0.5" rotation="-90 0 -90" onclick="setScene2()"></a-plane>
+  <a-plane src="#pfeil" transparent="true" position="1 0 0" height="0.5" width="0.5" rotation="-90 0 -90" onclick="setFlur1()"></a-plane>
 </a-entity>           
       
 </a-scene>
@@ -80,61 +80,68 @@
      function setScene0() {
        document.getElementById("scene0").setAttribute("visible", "true")
        document.getElementById("Eingang").setAttribute("visible", "false")
-       document.getElementById("scene2").setAttribute("visible", "false")
-       document.getElementById("scene3").setAttribute("visible", "false")
-       document.getElementById("scene4").setAttribute("visible", "false")
-       document.getElementById("scene5").setAttribute("visible", "false")
+       document.getElementById("Flur1").setAttribute("visible", "false")
+       document.getElementById("Flur2").setAttribute("visible", "false")
+       document.getElementById("WerkstattFlur").setAttribute("visible", "false")
+       document.getElementById("WerkTreppe").setAttribute("visible", "false")
+       document.getElementById("Tarifwesen").setAttribute("visible", "false")
    }
   
    function setEingang() {
        document.getElementById("scene0").setAttribute("visible", "false")
        document.getElementById("Eingang").setAttribute("visible", "true")
-       document.getElementById("scene2").setAttribute("visible", "false")
-       document.getElementById("scene3").setAttribute("visible", "false")
-       document.getElementById("scene4").setAttribute("visible", "false")
-       document.getElementById("scene5").setAttribute("visible", "false")
+       document.getElementById("Flur1").setAttribute("visible", "false")
+       document.getElementById("Flur2").setAttribute("visible", "false")
+       document.getElementById("WerkstattFlur").setAttribute("visible", "false")
+       document.getElementById("WerkTreppe").setAttribute("visible", "false")
+       document.getElementById("Tarifwesen").setAttribute("visible", "false")
    }
   
-    function setScene2() {
+    function setFlur1() {
        document.getElementById("scene0").setAttribute("visible", "false")
-       document.getElementById("scene1").setAttribute("visible", "false")
-       document.getElementById("scene2").setAttribute("visible", "true")
-       document.getElementById("scene3").setAttribute("visible", "false")
-       document.getElementById("scene4").setAttribute("visible", "false")
-       document.getElementById("scene5").setAttribute("visible", "false")
+       document.getElementById("Eingang").setAttribute("visible", "false")
+       document.getElementById("Flur1").setAttribute("visible", "true")
+       document.getElementById("Flur2").setAttribute("visible", "false")
+       document.getElementById("WerkstattFlur").setAttribute("visible", "false")
+       document.getElementById("WerkTreppe").setAttribute("visible", "false")
+       document.getElementById("Tarifwesen").setAttribute("visible", "false")
    } 
-      function setScene3() {
+      function setFlur2() {
        document.getElementById("scene0").setAttribute("visible", "false")
-       document.getElementById("scene1").setAttribute("visible", "false")
-       document.getElementById("scene2").setAttribute("visible", "true")
-       document.getElementById("scene3").setAttribute("visible", "false")
-       document.getElementById("scene4").setAttribute("visible", "false")
-       document.getElementById("scene5").setAttribute("visible", "false")
+       document.getElementById("Eingang").setAttribute("visible", "false")
+       document.getElementById("Flur1").setAttribute("visible", "false")
+       document.getElementById("Flur2").setAttribute("visible", "true")
+       document.getElementById("WerkstattFlur").setAttribute("visible", "false")
+       document.getElementById("WerkTreppe").setAttribute("visible", "false")
+       document.getElementById("Tarifwesen").setAttribute("visible", "false")
    } 
   
-     function setScene4() {
+     function setWerkstattFlur() {
        document.getElementById("scene0").setAttribute("visible", "false")
-       document.getElementById("scene1").setAttribute("visible", "false")
-       document.getElementById("scene2").setAttribute("visible", "false")
-       document.getElementById("scene3").setAttribute("visible", "true")
-       document.getElementById("scene4").setAttribute("visible", "false")
-       document.getElementById("scene5").setAttribute("visible", "false")
+       document.getElementById("Eingang").setAttribute("visible", "false")
+       document.getElementById("Flur1").setAttribute("visible", "false")
+       document.getElementById("Flur2").setAttribute("visible", "false")
+       document.getElementById("WerkstattFlur").setAttribute("visible", "true")
+       document.getElementById("WerkTreppe").setAttribute("visible", "false")
+       document.getElementById("Tarifwesen").setAttribute("visible", "false")
    } 
-      function setScene5() {
+      function setWerkTreppe() {
        document.getElementById("scene0").setAttribute("visible", "false")
-       document.getElementById("scene1").setAttribute("visible", "false")
-       document.getElementById("scene2").setAttribute("visible", "false")
-       document.getElementById("scene3").setAttribute("visible", "false")
-       document.getElementById("scene4").setAttribute("visible", "true")
-       document.getElementById("scene5").setAttribute("visible", "false")
+       document.getElementById("Eingang").setAttribute("visible", "false")
+       document.getElementById("Flur1").setAttribute("visible", "false")
+       document.getElementById("Flur2").setAttribute("visible", "false")
+       document.getElementById("WerkstattFlur").setAttribute("visible", "false")
+       document.getElementById("WerkTreppe").setAttribute("visible", "true")
+       document.getElementById("Tarifwesen").setAttribute("visible", "false")
    } 
-      function setScene6() {
+      function setTarifwesen() {
        document.getElementById("scene0").setAttribute("visible", "false")
-       document.getElementById("scene1").setAttribute("visible", "false")
-       document.getElementById("scene2").setAttribute("visible", "false")
-       document.getElementById("scene3").setAttribute("visible", "false")
-       document.getElementById("scene4").setAttribute("visible", "false")
-       document.getElementById("scene5").setAttribute("visible", "true")
+       document.getElementById("Eingang").setAttribute("visible", "false")
+       document.getElementById("Flur1").setAttribute("visible", "false")
+       document.getElementById("Flur2").setAttribute("visible", "false")
+       document.getElementById("WerkstattFlur").setAttribute("visible", "false")
+       document.getElementById("WerkTreppe").setAttribute("visible", "false")
+       document.getElementById("Tarifwesen").setAttribute("visible", "true")
    } 
 </script>                                                                                                   
                                                                                                       
