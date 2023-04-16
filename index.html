@@ -1,6 +1,6 @@
 <html>
   <head>
-      <title>VGK-Rundgang</title>
+      <title>VGK-Walk</title>
       <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
       <script src="https://unpkg.com/aframe-event-set-component@5/dist/aframe-event-set-component.min.js"></script>
     
@@ -34,7 +34,7 @@
 <a-entity id="scene0" visible="true">
      <a-text size="3" color="black" position="-1 2 -4" value="Virtueller Spaziergang durch die VGK"></a-text>
       <a-image src="#tür" height="5" width="5" position="-2 1 -4"
-           onclick="setScene1()"
+           onclick="setEingang()"
            event-set__click="material.color: white; scale: 1.1 1.1 1.1"
            event-set__mouseenter="material.color: white; scale: 1.1 1.1 1.1"></a-image>
       <a-text size="7" position="-2 1 -4" value="START" color="white"></a-text>
@@ -86,7 +86,7 @@
        document.getElementById("scene5").setAttribute("visible", "false")
    }
   
-   function Eingang() {
+   function setEingang() {
        document.getElementById("scene0").setAttribute("visible", "false")
        document.getElementById("Eingang").setAttribute("visible", "true")
        document.getElementById("scene2").setAttribute("visible", "false")
