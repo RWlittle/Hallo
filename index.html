@@ -1,6 +1,6 @@
 <html>
   <head>
-      <title>VGK-Walk</title>
+      <title>VGK-Rundgang</title>
       <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
       <script src="https://unpkg.com/aframe-event-set-component@5/dist/aframe-event-set-component.min.js"></script>
     
@@ -20,7 +20,10 @@
   </a-assets>
       
    <a-entity camera position="1 1 0" look-controls wasd-controls>
-       <a-entity cursor="fuse: true; fuseTimeout: 1000"
+     </a-entity>
+
+<a-entity id="scene0" visible="true">
+  <a-entity cursor="fuse: true; fuseTimeout: 1000"
                  position="0 0 -1"
                  geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.05"
                  material="color: white; shader: flat">
@@ -28,10 +31,6 @@
                       fill="backwards" from="1 1 1" to="1.5 1.5 1.5"></a-animation>
          <a-animation begin="cursor-fusing" easing="ease-in" attribute="scale"
                       fill="forwards" from="1.5 1.5 1.5" to="1 1 1"></a-animation>  
-        </a-entity>
-     </a-entity>
-
-<a-entity id="scene0" visible="true">
      <a-text size="3" color="black" position="-2 2 -4" value="Virtueller Spaziergang durch die VGK"></a-text>
       <a-image src="#tür" height="5" width="5" position="-2 1 -4"
            onclick="setEingang()"
@@ -39,6 +38,7 @@
            event-set__mouseenter="material.color: white; scale: 1.1 1.1 1.1"></a-image>
       <a-text size="7" position="-2 1 -4" value="START" color="white"></a-text>
       <a-sky color="gray"></a-sky>
+   </a-entity> 
 </a-entity>
       
 <a-entity id="Eingang" visible="false">
