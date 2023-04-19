@@ -1,6 +1,6 @@
 <html>
   <head>
-      <title>VGK-Rundgang</title>
+      <title>VGK-Walk</title>
       <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
       <script src="https://unpkg.com/aframe-event-set-component@5/dist/aframe-event-set-component.min.js"></script>
       <script src="../../../dist/aframe-master.js"></script>
@@ -59,10 +59,10 @@
 </a-entity>
       
 <a-entity id="Flur2" visible="false">
-  <a-sky src="#Flur2" rotation="0 90 0"></a-sky>
-  <a-plane src="#pfeilrot" transparent="true" position="1 0 -2" height="0.3" width="0.3" rotation="0 0 0" onclick="setWerkTreppe()"></a-plane>
+  <a-sky src="#flur2" rotation="0 90 0"></a-sky>
+  <a-plane src="#pfeil" transparent="true" position="1 0 -2" height="0.3" width="0.3" rotation="0 0 0" onclick="setWerkTreppe()"></a-plane>
   <a-plane src="#pfeil" transparent="true" position="-1 0 -2" height="0.3" width="0.3" rotation="45 0 0" onclick="setWerkstattFlur()"></a-plane>
-  <a-plane src="#pfeil" transparent="true" position="0 -1 3" height="1" width="0.3" rotation="0 0 180" onclick="setFlur1()"></a-plane>
+  <a-plane src="#pfeilrot" transparent="true" position="0 -1 3" height="1" width="0.3" rotation="0 0 180" onclick="setFlur1()"></a-plane>
 </a-entity> 
       
 <a-entity id="WerkstattFlur" visible="false">
@@ -77,7 +77,7 @@
       
 <a-entity id="Tarifwesen" visible="false">
   <a-sky src="#tw"></a-sky>
-  <a-plane src="#pfeil" transparent="true" position="1 0 0" height="0.5" width="0.5" rotation="-90 0 -90" onclick="setFlur1()"></a-plane>
+  <a-plane src="#pfeil" transparent="true" position="1 0 0" height="0.5" width="0.5" rotation="-90 10 -90" onclick="setFlur1()"></a-plane>
 </a-entity>           
       
 </a-scene>
