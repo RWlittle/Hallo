@@ -11,14 +11,14 @@
   <a-assets>
     <img id="tür" src="assets/EingangTürQuadrat.jpg">
     <img id="eingang" src="assets/Eingang.jpg">
-    <img id="flur1" src="assets/Ramona.jpg">
+    <img id="flur1" src="assets/Flur1.jpg">
     <img id="flur2" src="assets/Flur2.jpg">
     <img id="flurwerk" src="assets/Flurwerk.jpg">
     <img id="flurwerk1" src="assets/FlurWerk1.jpg">
     <img id="tw" src="assets/Michael.jpg">
     <img id="pfeil" src="assets/pfeil1.png">
     <img id="pfeilrot" src="assets/redpfeil1.png">
-    <img id="Kundencenter" src="assets/Eingang.jpg">
+    <img id="Kundencenter" src="assets/Kundencenter.jpg">
     <img id="Ramona1" src="assets/Ramona.jpg">
     <img id="Ramona2" src="assets/Ramona2.jpg">
   </a-assets>
@@ -82,57 +82,87 @@
 <script type="text/javascript"> 
      function setScene0() {
        document.getElementById("scene0").setAttribute("visible", "true")
-        document.getElementById("Eingang").setAttribute("visible", "false")
+       document.getElementById("Eingang").setAttribute("visible", "false")
        document.getElementById("Flur1").setAttribute("visible", "false")
        document.getElementById("Flur2").setAttribute("visible", "false")
        document.getElementById("WerkstattFlur").setAttribute("visible", "false")
        document.getElementById("WerkTreppe").setAttribute("visible", "false")
-        document.getElementById("Tarifwesen").setAttribute("visible", "false")
-        document.getElementById("Kundencenter").setAttribute("visible", "false")    
+       document.getElementById("Tarifwesen").setAttribute("visible", "false")
+       document.getElementById("Kundencenter").setAttribute("visible", "false")    
    }
   
    function setEingang() {
-      document.getElementById("scene0").setAttribute("visible", "false")
-        document.getElementById("Eingang").setAttribute("visible", "true")
+       document.getElementById("scene0").setAttribute("visible", "false")
+       document.getElementById("Eingang").setAttribute("visible", "true")
        document.getElementById("Flur1").setAttribute("visible", "false")
        document.getElementById("Flur2").setAttribute("visible", "false")
        document.getElementById("WerkstattFlur").setAttribute("visible", "false")
        document.getElementById("WerkTreppe").setAttribute("visible", "false")
-        document.getElementById("Tarifwesen").setAttribute("visible", "false")
-        document.getElementById("Kundencenter").setAttribute("visible", "false")    
+       document.getElementById("Tarifwesen").setAttribute("visible", "false")
+       document.getElementById("Kundencenter").setAttribute("visible", "false")    
    }
   
     function setFlur1() {
-       
+       document.getElementById("scene0").setAttribute("visible", "false")
+       document.getElementById("Eingang").setAttribute("visible", "false")
        document.getElementById("Flur1").setAttribute("visible", "true")
-       
+       document.getElementById("Flur2").setAttribute("visible", "false")
+       document.getElementById("WerkstattFlur").setAttribute("visible", "false")
+       document.getElementById("WerkTreppe").setAttribute("visible", "false")
+       document.getElementById("Tarifwesen").setAttribute("visible", "false")
+       document.getElementById("Kundencenter").setAttribute("visible", "false")  
    } 
       function setFlur2() {
-       
-      document.getElementById("Flur2").setAttribute("visible", "true")
-     
+       document.getElementById("scene0").setAttribute("visible", "false")
+       document.getElementById("Eingang").setAttribute("visible", "false")
+       document.getElementById("Flur1").setAttribute("visible", "false")
+       document.getElementById("Flur2").setAttribute("visible", "true")
+       document.getElementById("WerkstattFlur").setAttribute("visible", "false")
+       document.getElementById("WerkTreppe").setAttribute("visible", "false")
+       document.getElementById("Tarifwesen").setAttribute("visible", "false")
+       document.getElementById("Kundencenter").setAttribute("visible", "false")  
    } 
    
      function setWerkstattFlur() {
-    
+       document.getElementById("scene0").setAttribute("visible", "false")
+       document.getElementById("Eingang").setAttribute("visible", "false")
+       document.getElementById("Flur1").setAttribute("visible", "false")
+       document.getElementById("Flur2").setAttribute("visible", "false")
        document.getElementById("WerkstattFlur").setAttribute("visible", "true")
-    
+       document.getElementById("WerkTreppe").setAttribute("visible", "false")
+       document.getElementById("Tarifwesen").setAttribute("visible", "false")
+       document.getElementById("Kundencenter").setAttribute("visible", "false")  
    } 
       function setWerkTreppe() {
-  
+       document.getElementById("scene0").setAttribute("visible", "false")
+       document.getElementById("Eingang").setAttribute("visible", "false")
+       document.getElementById("Flur1").setAttribute("visible", "false")
+       document.getElementById("Flur2").setAttribute("visible", "false")
+       document.getElementById("WerkstattFlur").setAttribute("visible", "false")
        document.getElementById("WerkTreppe").setAttribute("visible", "true")
-
-        
+       document.getElementById("Tarifwesen").setAttribute("visible", "false")
+       document.getElementById("Kundencenter").setAttribute("visible", "false")  
    } 
       function setTarifwesen() {
-
+       document.getElementById("scene0").setAttribute("visible", "false")
+       document.getElementById("Eingang").setAttribute("visible", "false")
+       document.getElementById("Flur1").setAttribute("visible", "false")
+       document.getElementById("Flur2").setAttribute("visible", "false")
+       document.getElementById("WerkstattFlur").setAttribute("visible", "false")
+       document.getElementById("WerkTreppe").setAttribute("visible", "false")
        document.getElementById("Tarifwesen").setAttribute("visible", "true")
-
+       document.getElementById("Kundencenter").setAttribute("visible", "false")  
    } 
 
       function setKundencenter() {
-
-       document.getElementById("Kundencenter").setAttribute("visible", "true")      
+       document.getElementById("scene0").setAttribute("visible", "false")
+       document.getElementById("Eingang").setAttribute("visible", "false")
+       document.getElementById("Flur1").setAttribute("visible", "false")
+       document.getElementById("Flur2").setAttribute("visible", "false")
+       document.getElementById("WerkstattFlur").setAttribute("visible", "false")
+       document.getElementById("WerkTreppe").setAttribute("visible", "false")
+       document.getElementById("Tarifwesen").setAttribute("visible", "false")
+       document.getElementById("Kundencenter").setAttribute("visible", "true")       
    } 
 </script>                                                                                                   
                                                                                                       
