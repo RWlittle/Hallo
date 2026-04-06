@@ -82,14 +82,24 @@
 <script type="text/javascript"> 
      function setScene0() {
        document.getElementById("scene0").setAttribute("visible", "true")
-       
+        document.getElementById("Eingang").setAttribute("visible", "false")
+       document.getElementById("Flur1").setAttribute("visible", "false")
+       document.getElementById("Flur2").setAttribute("visible", "false")
+       document.getElementById("WerkstattFlur").setAttribute("visible", "false")
+       document.getElementById("WerkTreppe").setAttribute("visible", "false")
+        document.getElementById("Tarifwesen").setAttribute("visible", "false")
+        document.getElementById("Kundencenter").setAttribute("visible", "false")    
    }
   
    function setEingang() {
-      
-       document.getElementById("Eingang").setAttribute("visible", "true")
-      
-     
+      document.getElementById("scene0").setAttribute("visible", "false")
+        document.getElementById("Eingang").setAttribute("visible", "true")
+       document.getElementById("Flur1").setAttribute("visible", "false")
+       document.getElementById("Flur2").setAttribute("visible", "false")
+       document.getElementById("WerkstattFlur").setAttribute("visible", "false")
+       document.getElementById("WerkTreppe").setAttribute("visible", "false")
+        document.getElementById("Tarifwesen").setAttribute("visible", "false")
+        document.getElementById("Kundencenter").setAttribute("visible", "false")    
    }
   
     function setFlur1() {
@@ -99,7 +109,7 @@
    } 
       function setFlur2() {
        
-       document.getElementById("Flur2").setAttribute("visible", "true")
+      document.getElementById("Flur2").setAttribute("visible", "true")
      
    } 
    
