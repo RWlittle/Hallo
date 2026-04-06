@@ -41,20 +41,13 @@
           <img id="Ramona2" src="assets/Ramona2.jpg">
       </a-assets>
     <a-scene>
-    
-
       <!-- 360-degree image. -->
-      <a-sky id="image-360" radius="10" src="#eingang"
+      <a-sky id="image-360" radius="10" src=assets/Eingang.jpg">
              animation__fade="property: components.material.material.color; type: color; from: #FFF; to: #000; dur: 300; startEvents: fade"
              animation__fadeback="property: components.material.material.color; type: color; from: #000; to: #FFF; dur: 300; startEvents: animationcomplete__fade"></a-sky>
-
-      <!-- Image links. -->
-      <a-entity id="links" layout="type: line; margin: 1.5" position="-1.5 -1 -4">
-        <a-entity template="src: #link" data-src="#eingang" data-thumb="#pfeil"></a-entity>
-        <a-entity template="src: #link" data-src="#flur1" data-thumb="#pfeilrot"></a-entity>
-        <a-entity template="src: #link" data-src="#flur2" data-thumb="#tw"></a-entity>
-      </a-entity>
-
+       <a-text font="kelsonsans" value="VGK Walking" width="5" position="-2.5 0.25 -1.5"
+               rotation="0 15 0></a-text>
+ 
       <!-- Camera + cursor. -->
       <a-entity camera look-controls>
         <a-cursor
