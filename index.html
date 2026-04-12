@@ -1,63 +1,175 @@
-<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <title>360&deg; Image Gallery</title>
-    <meta name="description" content="360&deg; Image Gallery - A-Frame">
-    <!-- If running this example without a local copy of A-Frame, replace this next line with:
-    <script src="https://aframe.io/releases/<release_number>/aframe.min.js"></script>
-    -->
-    <script src="../../../dist/aframe-master.js"></script>
-    <script src="https://unpkg.com/aframe-template-component@3.x.x/dist/aframe-template-component.min.js"></script>
-    <script src="https://unpkg.com/aframe-layout-component@5.x.x/dist/aframe-layout-component.min.js"></script>
-    <script src="https://unpkg.com/aframe-event-set-component@5.x.x/dist/aframe-event-set-component.min.js"></script>
-    <script src="https://unpkg.com/aframe-proxy-event-component@2.1.0/dist/aframe-proxy-event-component.min.jss"></script>
-    
-    <!-- Image link template to be reused. -->
-    <script id="link" type="text/html">
-      <a-entity class="link"
-        geometry="primitive: plane; height: 1; width: 1"
-        material="shader: flat; src: ${thumb}"
-        sound="on: click; src: #click-sound"
-        event-set__mouseenter="scale: 1.2 1.2 1"
-        event-set__mouseleave="scale: 1 1 1"
-        event-set__click="_target: #image-360; _delay: 300; material.src: ${src}"
-        proxy-event="event: click; to: #image-360; as: fade"></a-entity>
-    </script>
-  </head>
-  <body>  
-    <a-assets>
-            <img id="tür" src="assets/EingangTürQuadrat.jpg">
-            <img id="eingang" src="assets/Eingang.jpg">
-            <img id="flur1" src="assets/Flur1.jpg">
-            <img id="flur2" src="assets/Flur2.jpg">
-            <img id="flurwerk" src="assets/Flurwerk.jpg">
-            <img id="flurwerk1" src="assets/FlurWerk1.jpg">
-            <img id="tw" src="assets/Michael.jpg">
-            <img id="pfeil" src="assets/pfeil1.png">
-          <img id="pfeilrot" src="assets/redpfeil1.png">
-          <img id="Kundencenter" src="assets/Kundencenter.jpg">
-          <img id="Ramona1" src="assets/Ramona.jpg">
-          <img id="Ramona2" src="assets/Ramona2.jpg">
-      </a-assets>
-    <a-scene>
-      <!-- 360-degree image. -->
-      <a-sky id="image-360" radius="10" src=assets/Eingang.jpg">
-             animation__fade="property: components.material.material.color; type: color; from: #FFF; to: #000; dur: 300; startEvents: fade"
-             animation__fadeback="property: components.material.material.color; type: color; from: #000; to: #FFF; dur: 300; startEvents: animationcomplete__fade"></a-sky>
-       <a-text font="kelsonsans" value="VGK Walking" width="5" position="-2.5 0.25 -1.5"
-               rotation="0 15 0></a-text>
+      <title>VGK-WAlk</title>
+      <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+      <script src="https://unpkg.com/aframe-event-set-component@5/dist/aframe-event-set-component.min.js"></script>
+      <script src="assets/aframe-master.js"></script>
+  
+  </head> 
+  <body>
+      <a-scene cursor="rayOrigin: mouse" >
+  <a-assets>
+    <img id="tür" src="assets/EingangTürQuadrat.jpg">
+    <img id="eingang" src="assets/Eingang.jpg">
+    <img id="flur1" src="assets/Ramona.jpg">
+    <img id="flur2" src="assets/Flur2.jpg">
+    <img id="flurwerk" src="assets/Flurwerk.jpg">
+    <img id="flurwerk1" src="assets/FlurWerk1.jpg">
+    <img id="tw" src="assets/Michael.jpg">
+    <img id="pfeil" src="assets/pfeil1.png">
+    <img id="pfeilrot" src="assets/redpfeil1.png">
+    <img id="Kundencenter" src="assets/Eingang.jpg">
+    <img id="Ramona1" src="assets/Ramona.jpg">
+    <img id="Ramona2" src="assets/Ramona2.jpg">
+  </a-assets>
+      
+  <a-entity camera position="1 1 0" look-controls wasd-controls></a-entity> 
  
-      <!-- Camera + cursor. -->
-      <a-entity camera look-controls>
-        <a-cursor
-          id="cursor"
-          animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 150"
-          animation__fusing="property: fusing; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 1500"
-          event-set__mouseenter="_event: mouseenter; color: springgreen"
-          event-set__mouseleave="_event: mouseleave; color: black"
-          raycaster="objects: .link"></a-cursor>
-      </a-entity>
-    </a-scene>
+<a-entity id="scene0" visible="true">
+      <a-text size="3" color="black" position="-2 2 -4" value="Virtueller Spaziergang durch die VGK"></a-text>
+      <a-text font="kelsonsans" value="Eingang" width="6" position="-2.5 0.25 -1.5"
+              rotation="0 15 0"></a-text>
+      <a-image src="#tür" height="5" width="5" position="-2 1 -4"
+           onclick="setEingang()"
+           event-set__click="material.color: white; scale: 1.1 1.1 1.1"
+           event-set__mouseenter="material.color: white; scale: 1.1 1.1 1.1"></a-image>
+      <a-text size="7" position="-2 1 -4" value="START" color="white"></a-text>
+      <a-sky color="gray"></a-sky>
+</a-entity>
+      
+<a-entity id="Eingang" visible="false">
+          <a-animation begin="cursor-fusing" easing="ease-in" attribute="scale"
+                      fill="forwards" from="1.5 1.5 1.5" to="1 1 1"></a-animation>  
+    <a-sky src="#eingang" scale="-1.0 1.0 1.0"></a-sky>
+    <a-plane src="#pfeil" transparent="true" position="2 -1 -4" height="1" width="0.5" rotation="-90 0 0" onclick="setFlur1()"></a-plane>
+</a-entity>
+   
+<a-entity id="Flur1" visible="false">
+  <a-sky src="#flur1" rotation="0 -90 0"></a-sky>
+  <a-plane src="#pfeil" transparent="true" position="1 0 -2" height="0.3" width="0.3" rotation="0 0 0" onclick="setFlur2()"></a-plane>
+  <a-plane src="#pfeil" transparent="true" position="1.5 -1 3" height="1" width="0.3" rotation="-90 0 180" onclick="setEingang()"></a-plane>
+  <a-plane src="#pfeil" transparent="true" position="0.5 0 -1" height="0.3" width="0.3" rotation="-90 0 90" onclick="setTarifwesen()"></a-plane>
+  <a-plane src="#pfeilrot" transparent="true" position="-3 -1 -1" height="1" width="0.3" rotation="-90 0 90" onclick="setKundencenter()"></a-plane>
+</a-entity>
+      
+<a-entity id="Flur2" visible="false">
+  <a-sky src="#flur2" rotation="0 90 0"></a-sky>
+  <a-plane src="#pfeil" transparent="true" position="1 0 -2" height="0.3" width="0.3" rotation="0 0 0" onclick="setWerkTreppe()"></a-plane>
+  <a-plane src="#pfeil" transparent="true" position="-1 0 -2" height="0.3" width="0.3" rotation="45 0 0" onclick="setWerkstattFlur()"></a-plane>
+  <a-plane src="#pfeilrot" transparent="true" position="1.5 -1 3" height="1" width="0.3" rotation="0 0 180" onclick="setFlur1()"></a-plane>
+</a-entity> 
+      
+<a-entity id="WerkstattFlur" visible="false">
+  <a-sky src="#flurwerk" rotation="0 90 0"></a-sky>
+  <a-plane src="#pfeil" transparent="true" position="-6 -1 0" height="1" width="0.5" rotation="-90 0 0" onclick="setWerkTreppe()"></a-plane>
+</a-entity>
+      
+<a-entity id="WerkTreppe" visible="false">
+  <a-sky src="#flurwerk1"></a-sky>
+  <a-plane src="#pfeil" transparent="true" position="-6 -1 0" height="1" width="0.5" rotation="-90 0 0" onclick="setWerkstattFlur()"></a-plane>
+</a-entity> 
+      
+<a-entity id="Tarifwesen" visible="false">
+  <a-sky src="#tw"></a-sky>
+  <a-plane src="#pfeil" transparent="true" position="1 0 0" height="0.5" width="0.5" rotation="-90 10 -90" onclick="setFlur1()"></a-plane>
+</a-entity>  
+  </a-scene>
+
+<a-entity id="Kundencenter" visible="false">
+  <a-sky src="#Kundencenter"></a-sky>
+  <a-plane src="#pfeilrot" transparent="true" position="1 0 0" height="0.5" width="0.5" rotation="-90 10 -90" onclick="setFlur1()"></a-plane>
+</a-entity>  
+  </a-scene>
+    
+<script type="text/javascript"> 
+     function setScene0() {
+       document.getElementById("scene0").setAttribute("visible", "true")
+       document.getElementById("Eingang").setAttribute("visible", "false")
+       document.getElementById("Flur1").setAttribute("visible", "false")
+       document.getElementById("Flur2").setAttribute("visible", "false")
+       document.getElementById("WerkstattFlur").setAttribute("visible", "false")
+       document.getElementById("WerkTreppe").setAttribute("visible", "false")
+       document.getElementById("Tarifwesen").setAttribute("visible", "false")
+       document.getElementById("Kundencenter").setAttribute("visible", "false")
+   }
+  
+   function setEingang() {
+       document.getElementById("scene0").setAttribute("visible", "false")
+       document.getElementById("Eingang").setAttribute("visible", "true")
+       document.getElementById("Flur1").setAttribute("visible", "false")
+       document.getElementById("Flur2").setAttribute("visible", "false")
+       document.getElementById("WerkstattFlur").setAttribute("visible", "false")
+       document.getElementById("WerkTreppe").setAttribute("visible", "false")
+       document.getElementById("Tarifwesen").setAttribute("visible", "false")
+       document.getElementById("Kundencenter").setAttribute("visible", "false")
+     
+   }
+  
+    function setFlur1() {
+       document.getElementById("scene0").setAttribute("visible", "false")
+       document.getElementById("Eingang").setAttribute("visible", "false")
+       document.getElementById("Flur1").setAttribute("visible", "true")
+       document.getElementById("Flur2").setAttribute("visible", "false")
+       document.getElementById("WerkstattFlur").setAttribute("visible", "false")
+       document.getElementById("WerkTreppe").setAttribute("visible", "false")
+       document.getElementById("Tarifwesen").setAttribute("visible", "false")
+       document.getElementById("Kundencenter").setAttribute("visible", "false")
+   } 
+      function setFlur2() {
+       document.getElementById("scene0").setAttribute("visible", "false")
+       document.getElementById("Eingang").setAttribute("visible", "false")
+       document.getElementById("Flur1").setAttribute("visible", "false")
+       document.getElementById("Flur2").setAttribute("visible", "true")
+       document.getElementById("WerkstattFlur").setAttribute("visible", "false")
+       document.getElementById("WerkTreppe").setAttribute("visible", "false")
+       document.getElementById("Tarifwesen").setAttribute("visible", "false")
+        document.getElementById("Kundencenter").setAttribute("visible", "false")
+   } 
+   
+     function setWerkstattFlur() {
+       document.getElementById("scene0").setAttribute("visible", "false")
+       document.getElementById("Eingang").setAttribute("visible", "false")
+       document.getElementById("Flur1").setAttribute("visible", "false")
+       document.getElementById("Flur2").setAttribute("visible", "false")
+       document.getElementById("WerkstattFlur").setAttribute("visible", "true")
+       document.getElementById("WerkTreppe").setAttribute("visible", "false")
+       document.getElementById("Tarifwesen").setAttribute("visible", "false")
+    document.getElementById("Kundencenter").setAttribute("visible", "false")   
+   } 
+      function setWerkTreppe() {
+       document.getElementById("scene0").setAttribute("visible", "false")
+       document.getElementById("Eingang").setAttribute("visible", "false")
+       document.getElementById("Flur1").setAttribute("visible", "false")
+       document.getElementById("Flur2").setAttribute("visible", "false")
+       document.getElementById("WerkstattFlur").setAttribute("visible", "false")
+       document.getElementById("WerkTreppe").setAttribute("visible", "true")
+       document.getElementById("Tarifwesen").setAttribute("visible", "false")
+      document.getElementById("Kundencenter").setAttribute("visible", "false")   
+        
+   } 
+      function setTarifwesen() {
+       document.getElementById("scene0").setAttribute("visible", "false")
+       document.getElementById("Eingang").setAttribute("visible", "false")
+       document.getElementById("Flur1").setAttribute("visible", "false")
+       document.getElementById("Flur2").setAttribute("visible", "false")
+       document.getElementById("WerkstattFlur").setAttribute("visible", "false")
+       document.getElementById("WerkTreppe").setAttribute("visible", "false")
+       document.getElementById("Tarifwesen").setAttribute("visible", "true")
+       document.getElementById("Kundencenter").setAttribute("visible", "false") 
+   } 
+
+      function setKundencenter() {
+       document.getElementById("scene0").setAttribute("visible", "false")
+       document.getElementById("Eingang").setAttribute("visible", "false")
+       document.getElementById("Flur1").setAttribute("visible", "false")
+       document.getElementById("Flur2").setAttribute("visible", "false")
+       document.getElementById("WerkstattFlur").setAttribute("visible", "false")
+       document.getElementById("WerkTreppe").setAttribute("visible", "false")
+       document.getElementById("Tarifwesen").setAttribute("visible", "false")
+       document.getElementById("Kundencenter").setAttribute("visible", "true")      
+   } 
+</script>                                                                                                   
+                                                                                                      
   </body>
 </html>
+
